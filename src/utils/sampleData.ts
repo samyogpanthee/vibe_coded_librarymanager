@@ -111,6 +111,6 @@ export const sampleRentals: Record<string, Rental> = {
     due_date: oneWeekAgo.toISOString().split('T')[0],
     return_date: null,
     status: 'overdue',
-    fine_amount: 3.5, // $0.50/day * 7 days late
+    fine_amount: 350, // Rs. 50/day * 7 days late
   },
 };

@@ -25,7 +25,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats }) => {
     { label: 'Members', value: stats.totalMembers, icon: '👥', color: 'from-purple-500 to-purple-600' },
     { label: 'Active Rentals', value: stats.activeRentalCount, icon: '🔄', color: 'from-amber-500 to-amber-600' },
     { label: 'Overdue', value: stats.overdueCount, icon: '⚠️', color: 'from-red-500 to-red-600' },
-    { label: 'Total Fines', value: `$${stats.totalFines.toFixed(2)}`, icon: '💰', color: 'from-rose-500 to-rose-600' },
+    { label: 'Total Fines', value: `Rs. ${stats.totalFines.toFixed(2)}`, icon: '💰', color: 'from-rose-500 to-rose-600' },
   ];
 
   return (
@@ -62,7 +62,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats }) => {
           </div>
           <div className="bg-red-50 rounded-lg p-4 border border-red-100">
             <p className="text-sm text-red-600 font-medium">Late Fine Rate</p>
-            <p className="text-xl font-bold text-red-800">$0.50 / day</p>
+            <p className="text-xl font-bold text-red-800">Rs. 50 / day</p>
           </div>
           <div className="bg-green-50 rounded-lg p-4 border border-green-100">
             <p className="text-sm text-green-600 font-medium">Books Checked Out</p>

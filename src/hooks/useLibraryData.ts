@@ -10,7 +10,7 @@ import { Book, Member, Rental, LibraryData } from '../types';
 import { sampleBooks, sampleMembers, sampleRentals } from '../utils/sampleData';
 
 const STORAGE_KEY = 'library_data';
-const LATE_FINE_PER_DAY = 0.50; // $0.50 per day late
+const LATE_FINE_PER_DAY = 50; // Rs. 50 per day late (NPR)
 const DEFAULT_LOAN_DAYS = 14;
 
 function generateId(prefix: string, existingIds: string[]): string {

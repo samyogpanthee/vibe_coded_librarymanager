@@ -2,7 +2,7 @@
 // RENTAL MANAGER COMPONENT - Issue, Return, Overdue Tracking
 // ============================================================
 // Handles book rentals with 14-day loan period, overdue detection,
-// and fine calculation ($0.50/day late).
+// and fine calculation (Rs. 50/day late).
 
 import React, { useState } from 'react';
 import { Rental, Book, Member } from '../types';
@@ -84,7 +84,7 @@ const RentalManager: React.FC<RentalManagerProps> = ({
     const fine = daysLate * 0.50;
 
     const message = fine > 0
-      ? `Return "${book?.title}" for ${member?.name}?\n\n⚠️ OVERDUE by ${daysLate} day(s) — Late fine: $${fine.toFixed(2)}`
+      ? `Return "${book?.title}" for ${member?.name}?\n\n⚠️ OVERDUE by ${daysLate} day(s) — Late fine: Rs. ${fine.toFixed(2)}`
       : `Return "${book?.title}" for ${member?.name}?`;
 
     if (window.confirm(message)) {
@@ -169,7 +169,7 @@ const RentalManager: React.FC<RentalManagerProps> = ({
             </div>
           </div>
           <div className="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-100 text-sm text-amber-700">
-            ℹ️ Loan period: <strong>14 days</strong> from today. Late fine: <strong>$0.50/day</strong>.
+            ℹ️ Loan period: <strong>14 days</strong> from today. Late fine: <strong>Rs. 50/day</strong>.
           </div>
           <div className="flex gap-2 mt-4">
             <button
@@ -240,7 +240,7 @@ const RentalManager: React.FC<RentalManagerProps> = ({
                       <td className="px-4 py-3 text-center">{getStatusBadge(rental)}</td>
                       <td className="px-4 py-3 text-center">
                         {rental.fine_amount > 0 ? (
-                          <span className="text-red-600 font-bold">${rental.fine_amount.toFixed(2)}</span>
+                          <span className="text-red-600 font-bold">Rs. {rental.fine_amount.toFixed(2)}</span>
                         ) : (
                           <span className="text-gray-400">—</span>
                         )}
